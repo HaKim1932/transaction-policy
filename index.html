@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lady's Store | Transaction Policy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -58,11 +61,11 @@
       </div>
 
       <div class="accept-grid">
-        <div class="wallet gcash"><span>G</span><strong>GCash</strong></div>
-        <div class="wallet maya"><span>M</span><strong>Maya</strong></div>
-        <div class="wallet mari"><span>m</span><strong>MariBank</strong></div>
-        <div class="wallet cimb"><span>C</span><strong>CIMB</strong></div>
-        <div class="wallet gotyme"><span>Go</span><strong>GoTyme Bank</strong></div>
+        <div class="wallet gcash reveal"><span>G</span><strong>GCash</strong></div>
+        <div class="wallet maya reveal"><span>M</span><strong>Maya</strong></div>
+        <div class="wallet mari reveal"><span>m</span><strong>MariBank</strong></div>
+        <div class="wallet cimb reveal"><span>C</span><strong>CIMB</strong></div>
+        <div class="wallet gotyme reveal"><span>Go</span><strong>GoTyme Bank</strong></div>
       </div>
     </section>
 
@@ -73,22 +76,22 @@
       </div>
 
       <div class="service-grid">
-        <article>
+        <article class="reveal">
           <div class="icon">📲</div>
           <h3>Load</h3>
           <p>Prepaid load for available networks.</p>
         </article>
-        <article>
+        <article class="reveal">
           <div class="icon">💰</div>
           <h3>Cash-In</h3>
           <p>Add funds to supported e-wallets and banks.</p>
         </article>
-        <article>
+        <article class="reveal">
           <div class="icon">💸</div>
           <h3>Cash-Out</h3>
           <p>Withdraw funds safely and conveniently.</p>
         </article>
-        <article>
+        <article class="reveal">
           <div class="icon">🏦</div>
           <h3>Bank Transfer</h3>
           <p>Please inform us first if sending to bank or other wallet.</p>
@@ -103,25 +106,25 @@
       </div>
 
       <div class="policy-grid">
-        <div class="policy-item">
+        <div class="policy-item reveal">
           <span>01</span>
           <p>Check the account number, account name, amount, and transaction type.</p>
         </div>
-        <div class="policy-item">
+        <div class="policy-item reveal">
           <span>02</span>
           <p>Customer-confirmed information is considered final.</p>
         </div>
-        <div class="policy-item">
+        <div class="policy-item reveal">
           <span>03</span>
           <p>Successful transactions cannot be refunded or reversed due to customer-provided or customer-confirmed details.</p>
         </div>
-        <div class="policy-item">
+        <div class="policy-item reveal">
           <span>04</span>
           <p>Keep your receipt and CTRL#/Reference Number as proof of transaction.</p>
         </div>
       </div>
 
-      <div class="proof-box">
+      <div class="proof-box reveal">
         <div class="proof-icon">📸</div>
         <div>
           <h3>For your protection</h3>
@@ -163,7 +166,7 @@
       </div>
       <div>
         <p>Open Daily</p>
-        <strong>8:00 AM - 9:00 PM</strong>
+        <strong>6:00 AM - 10:00 PM</strong>
       </div>
       <div>
         <p>Thank you for supporting</p>
@@ -171,5 +174,18 @@
       </div>
     </footer>
   </main>
+
+  <script>
+    const revealItems = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealItems.forEach((el) => revealObserver.observe(el));
+  </script>
 </body>
 </html>
