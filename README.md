@@ -1,3 +1,3 @@
-# Lady's Store Transaction Guide
+# Lady's Store Transaction Policy
 
-Upload these files to your GitHub repository root.
+Upload index.html, style.css, and qr-code.png to the root of your GitHub Pages repository.
