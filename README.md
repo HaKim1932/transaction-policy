@@ -15,3 +15,4 @@ Simple static website for Cash-In / Cash-Out QR code.
    - Folder: `/root`
 5. Save.
 6. Copy the GitHub Pages link and use it for your QR code.
+Updated deployment
